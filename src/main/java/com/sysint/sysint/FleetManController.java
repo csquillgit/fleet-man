@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class SysIntController {
+public class FleetManController {
 
-	protected Logger logger = Logger.getLogger(SysIntController.class.getName());
+	protected Logger logger = Logger.getLogger(FleetManController.class.getName());
 
 	@RequestMapping("/")
 	public String test() {
