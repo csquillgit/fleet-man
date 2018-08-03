@@ -17,7 +17,7 @@ public class Facade2Controller {
 	@Autowired
 	private CoreService coreService;
 
-	@RequestMapping("/")
+	@RequestMapping
 	public String test() {
 		return coreService.echo("facade2");
 	}
