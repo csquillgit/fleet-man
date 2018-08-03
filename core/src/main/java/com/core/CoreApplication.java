@@ -1,12 +1,12 @@
-package com.facade1.facade1;
+package com.core;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Facade1Application {
+public class CoreApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Facade1Application.class, args);
+		SpringApplication.run(CoreApplication.class, args);
 	}
 }

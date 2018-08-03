@@ -1,11 +1,11 @@
-package com.sysint.sysint;
+package com.fleetman;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = { "com.sysint.sysint", "com.core.core", "com.facade1.facade1", "com.facade2.facade2" })
+@ComponentScan(basePackages = { "com.fleetman", "com.core", "com.facade1", "com.facade2" })
 public class FleetManApplication {
 
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.facade2.facade2;
+package com.facade2;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
