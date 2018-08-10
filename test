@@ -12,23 +12,21 @@ subprojects {
 
 project(':app') {
     
-    dependencies {
-        compile project(':core')
-        compile project(':facade1')
-        compile project(':facade2')
+    configurations {
+        spi
     }
-}
-
-project(':facade1') {
     
     dependencies {
         compile project(':core')
     }
-}
-
-project(':facade2') {
     
-    dependencies {
-        compile project(':core')
+    task spiJar(type: Jar) {
+        baseName = 'api-spi'
+        from sourceSets.main.output
+        include('com/core/**')
+    }
+    artifacts {
+        spi spiJar
     }
 }
+

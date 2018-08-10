@@ -1,4 +1,5 @@
 rootProject.name = 'fleet-man'
+include 'app'
+include 'core'
 include 'facade1'
 include 'facade2'
-include 'core'
