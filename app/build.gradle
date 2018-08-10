@@ -24,6 +24,10 @@ repositories {
 }
 
 dependencies {
+
+	compile project(':facade1')
+	compile project(':facade2')
+	
 	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
