@@ -1,3 +1,0 @@
-rootProject.name = 'app'
-include 'facade1'
-include 'facade2'

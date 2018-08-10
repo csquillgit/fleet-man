@@ -1,23 +1,42 @@
-subprojects {
-    apply plugin: 'java'
-    group = 'org.gradle.sample'
-    version = '1.0'
+buildscript {
+    ext {
+        springBootVersion = '2.0.3.RELEASE'
+    }
     repositories {
         mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
     }
     dependencies {
-        testCompile "junit:junit:4.12"
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
 
-project(':facade1') {
-    dependencies {
-        compile project(':core')
-    }
-}
+subprojects {
+    apply plugin: "java"
+    apply plugin: "io.spring.dependency-management"
 
-project(':facade2') {
-    dependencies {
-        compile project(':core')
+    repositories {
+        jcenter()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
     }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.boot:spring-boot-dependencies:$springBootVersion"
+        }
+    }
+
+    dependencies {
+        compile "org.springframework.boot:spring-boot-starter"
+        compile "org.springframework.boot:spring-boot-starter-actuator"
+
+        testCompile('org.springframework.boot:spring-boot-starter-test')
+        testCompile('io.projectreactor:reactor-test')
+    }
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
 }
