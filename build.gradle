@@ -11,23 +11,19 @@ subprojects {
 }
 
 project(':app') {
-    
     dependencies {
-        compile project(':core')
         compile project(':facade1')
         compile project(':facade2')
     }
 }
 
 project(':facade1') {
-    
     dependencies {
         compile project(':core')
     }
 }
 
 project(':facade2') {
-    
     dependencies {
         compile project(':core')
     }
